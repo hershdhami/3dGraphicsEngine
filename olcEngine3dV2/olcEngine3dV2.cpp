@@ -21,9 +21,23 @@ class olcEngine3d : public olcConsoleGameEngine {
         //Almost always use wstring on Windows
         //wchar is 2 bytes long
 
+    private:
+        mesh meshCube;
 
     public:
         bool OnUserCreate() override {
+            meshCube.tris = {
+                //SOUTH OF CUBE
+                {0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 0.0f},
+                {0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f},
+
+                //EAST OF CUBE
+                {1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f},
+                {0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f},
+                
+                //Add other directions
+            };
+
             return true;
         }
 
